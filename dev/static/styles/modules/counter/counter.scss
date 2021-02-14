@@ -1,0 +1,15 @@
+.counter {
+  margin-top: calc(.5rem + 3.5vw);
+  text-align: center;
+  font-size: 18px;
+  &__descr {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #5B5B5B;
+  }
+}
+
+.tick_mirror {
+  transform: rotate(180deg);
+  -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.4)));
+}

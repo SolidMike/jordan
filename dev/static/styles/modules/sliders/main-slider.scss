@@ -1,0 +1,31 @@
+.main-slider {
+  max-height: 460px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: .7rem;
+  &__pagination {
+    bottom: 2.5vw!important;
+    padding-right: 2.5vw;
+    text-align: right;
+    .swiper-pagination-bullet {
+      opacity: 1;
+      background-color: $white;
+      transition: all .3s;
+    }
+    .swiper-pagination-bullet-active {
+      width: 40px;
+      border-radius: 9px;
+    }
+  }
+  &__btn-next,
+  &__btn-prev {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/general/main-slider-btn-next.png");
+    right: 25px;
+  }
+  &__btn-prev {
+    background-image: url("../images/general/main-slider-btn-prev.png");
+    left: 25px;
+  }
+}

@@ -1,0 +1,13 @@
+.form-block
+    .form-block__btns-wrapper
+        +link('Войти', './login.html')
+        +link('Регистрация', './registration.html')
+    +buttonWithIcon('Войти с Facebook', false, '<svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+    '<path d="M6.54 2.65667H8.00067V0.112667C7.74867 0.078 6.882 0 5.87267 0C3.76667 0 2.324 1.32467 2.324 3.75933V6H0V8.844H2.324V16H5.17333V8.84467H7.40333L7.75733 6.00067H5.17267V4.04133C5.17333 3.21933 5.39467 2.65667 6.54 2.65667Z"/>\n' +
+    '</svg>', 'btn_border_round btn_icon_left form-block__btn_type_fb', 'icon_size_md icon_border_round')
+    form(action="#" method="post").form-block__form#form-registration
+        +input('', 'Логин', 'login', '', '', 'form-group__label_on_top', 'form-group__input_size_md', '')
+        +input('', 'Телефон', 'phone', '', '', 'form-group__label_on_top', 'form-group__input_size_md', '')
+        +input('', 'E-mail', 'email', '', '', 'form-group__label_on_top', 'form-group__input_size_md', '')
+        +button('Зарегистрироваться', false, '')
+    .form-block__policy * Я соглашаюсь с правилами использования сервиса, а также с передачей и обработкой моих данных. Я подтверждаю своё совершеннолетие и ответственность за размещение объявления

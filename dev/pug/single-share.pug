@@ -1,0 +1,178 @@
+extends template/main
+
+block variables
+    - var title = 'Страница акции'
+    - var pageClass = 'singleSharePage'
+
+block content
+    section.page-header
+        .page-header__container.container
+            ul.breadcrumbs
+                +breadcrumbs-item('Акции пользователя "Modnova"')
+                +breadcrumbs-item('Мода и стиль','#')
+                +breadcrumbs-item('Мода и стиль','#')
+                +breadcrumbs-item('Название города','#')
+                +breadcrumbs-item('Главная', '/')
+    section.single-share
+        .container
+            .flex-grid.single-share_border_bottom
+                .col_xl_50.col_lg_100.single-share__thumbs-slider
+                    .thumbs-slider
+                        .badge.badge_type_vip.thumbs-slider__badge VIP
+                        .swiper-container.thumbs-slider__gallery-top.thumbs-slider__container
+                            .swiper-wrapper
+                                .swiper-slide.thumbs-slider__slide(style="background-image:url(./static/images/content/share-slide-1.jpg)")
+                                .swiper-slide.thumbs-slider__slide(style="background-image:url(./static/images/content/share-slide-2.jpg)")
+                                .swiper-slide.thumbs-slider__slide(style="background-image:url(./static/images/content/share-slide-3.jpg)")
+                                .swiper-slide.thumbs-slider__slide(style="background-image:url(./static/images/content/share-slide-4.jpg)")
+                                .swiper-slide.thumbs-slider__slide(style="background-image:url(./static/images/content/share-slide-5.jpg)")
+                            .thumbs-slider__btns-wrapper
+                                .swiper-button-prev.swiper-button-white.thumbs-slider__btn-prev.btn.btn_border_round
+                                    span
+                                .swiper-button-next.swiper-button-white.thumbs-slider__btn-next.btn.btn_border_round
+                                    span
+                        .swiper-container.thumbs-slider__gallery-thumbs.thumbs-slider__container
+                            .swiper-wrapper
+                                .swiper-slide.thumbs-slider__thumb(style="background-image:url(./static/images/content/share-slide-1.jpg)")
+                                .swiper-slide.thumbs-slider__thumb(style="background-image:url(./static/images/content/share-slide-2.jpg)")
+                                .swiper-slide.thumbs-slider__thumb(style="background-image:url(./static/images/content/share-slide-3.jpg)")
+                                .swiper-slide.thumbs-slider__thumb(style="background-image:url(./static/images/content/share-slide-4.jpg)")
+                                .swiper-slide.thumbs-slider__thumb(style="background-image:url(./static/images/content/share-slide-5.jpg)")
+                    .single-share__date Дата создания акции: 20 августа 2020
+                .single-share__info-block.col_xl_50.col_lg_100.col.col_flex_auto
+                    .single-share__subtitle موبايل - تابلت
+                    .single-share__title.title ﺮﻓﻮﺘﻣ ﻰﻟإ ﻂﻘﻓ سﺎﻘﻤﻟا هﺪﺣو ﻪﺒﺣ لﺎﻨﻴﺟروا
+                    .single-share__countdown.countdown
+                        .tick.countdown__tick(data-did-init='handleTickInit')
+                            div(data-repeat='true' data-layout='horizontal fit' data-transform='preset(d, h, m) -> delay')
+                                .tick-group.countdown__tick-group
+                                    span.tick-label.countdown__tick-label(data-key='label' data-view='text')
+                                    div(data-key='value' data-repeat='true' data-transform='pad(00) -> split -> delay')
+                                        span(data-view='flip')
+                    +buttonWithIcon('Добавить в', false, '<svg viewBox="0 0 26 23"  fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                    '<path d="M12.669 22.8629C12.8307 22.9531 13.0121 23.0002 13.1964 23L13.2274 22.9895C13.4367 22.9883 13.6412 22.9261 13.8169 22.8102C15.3159 21.7848 16.7557 20.6721 18.1292 19.4778C22.8034 15.5759 25.2749 12.6442 25.6679 10.6194C25.9014 9.80457 26.013 8.95842 25.9988 8.10958C25.9471 3.63824 22.5966 0 18.5325 0H18.3877C17.3537 0.0123051 16.3338 0.246902 15.3947 0.68847C14.4557 1.13004 13.6185 1.76865 12.9379 2.56259C12.2357 1.79164 11.3841 1.17793 10.437 0.760389C9.48997 0.34285 8.46815 0.130596 7.43638 0.137093C6.48573 0.143645 5.54594 0.343857 4.67222 0.725969C3.7985 1.10808 3.00847 1.66439 2.34852 2.36222C0.809753 3.98688 -0.034433 6.16751 0.00107655 8.42595C0.00552242 9.24198 0.131037 10.0526 0.373359 10.8304C0.859394 12.95 3.34128 15.7235 8.19129 19.5938C9.44995 20.5851 11.3263 21.9172 12.157 22.507L12.183 22.5254L12.5242 22.768L12.669 22.8629Z" fill="white"/>\n' +
+                    '</svg>', 'btn_border_round btn_icon_left card__btn_type_add card__btn single-share__btn', 'icon btn__icon icon_have_stroke icon_size_sm')(type="button")
+                    .single-share__info.share-info.flex-grid
+                        .col_xl_33.col_sm_50.share-info__item
+                            .share-info__title Электронный адрес:
+                            a(href="mailto:modnova@gmail.com").share-info__text modnova@gmail.com
+                        .col_xl_33.col_sm_50.share-info__item
+                            .share-info__title Сайт:
+                            a(href="#").share-info__text www.modnova.com
+                        .col_xl_33.col_sm_50.share-info__item
+                            .share-info__title Название магазина:
+                            .share-info__text "Modnova"
+                        .col_xl_33.col_sm_50.share-info__item
+                            .share-info__title Соц.сети:
+                            .share-info__text
+                                .socials
+                                    ul.socials__list
+                                        li.socials__item
+                                            a(href="#").socials__link
+                                                span.icon.icon_size_md.icon_border_round.icon_hover
+                                                    svg(viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                                        g(clip-path='url(#clip0)')
+                                                            path(d='M19.2958 11.5775C19.8924 6.55502 19.0091 3.38419 17.4158 1.95002L17.4166 1.94919C14.8449 -0.499979 6.15994 -0.86248 3.08328 2.05919C1.70161 3.48835 1.21494 5.58585 1.16161 8.18252C1.10828 10.78 1.04494 15.6459 5.57911 16.9659H5.58328L5.57911 18.9817C5.57911 18.9817 5.54828 19.7984 6.06994 19.9625C6.66661 20.1559 6.93661 19.7767 8.79244 17.56C11.8958 17.8292 14.2791 17.2125 14.5499 17.1225C15.1766 16.9125 18.7224 16.4434 19.2958 11.5775ZM9.09828 16.1417C9.09828 16.1417 7.13411 18.5909 6.52328 19.2267C6.32328 19.4334 6.10411 19.4142 6.10744 19.0042C6.10744 18.735 6.12244 15.6575 6.12244 15.6575C2.27828 14.5559 2.50494 10.4125 2.54661 8.24502C2.58828 6.07669 2.98494 4.30085 4.15494 3.10502C6.85411 0.574187 14.4683 1.14002 16.4083 2.96335C18.7799 5.06585 17.9358 11.0059 17.9408 11.2084C17.4533 15.27 14.5799 15.5275 14.0516 15.7034C13.8258 15.7784 11.7299 16.3175 9.09828 16.1417Z')
+                                                            path(d='M10.1851 3.58081C9.86425 3.58081 9.86425 4.08081 10.1851 4.08498C12.6742 4.10414 14.7242 5.83914 14.7467 9.02165C14.7467 9.35748 15.2384 9.35331 15.2343 9.01748H15.2334C15.2068 5.58831 12.9684 3.59998 10.1851 3.58081Z')
+                                                            path(d='M13.4592 8.4942C13.4517 8.82586 13.9425 8.8417 13.9467 8.50586C13.9875 6.61503 12.8217 5.05753 10.6309 4.89336C10.31 4.87003 10.2767 5.3742 10.5967 5.39753C12.4967 5.5417 13.4975 6.83836 13.4592 8.4942Z')
+                                                            path(d='M12.9341 10.645C12.5224 10.4067 12.1032 10.555 11.9299 10.7892L11.5674 11.2583C11.3832 11.4967 11.0391 11.465 11.0391 11.465C8.52741 10.8008 7.85574 8.17251 7.85574 8.17251C7.85574 8.17251 7.82491 7.81667 8.05491 7.62584L8.50824 7.25084C8.73491 7.07084 8.87824 6.63751 8.64741 6.21167C8.03074 5.09751 7.61658 4.71334 7.40575 4.41834C7.18408 4.14084 6.85075 4.07834 6.50408 4.26584H6.49658C5.77575 4.68751 4.98658 5.47667 5.23908 6.28917C5.66991 7.14584 6.46158 9.87667 8.98491 11.94C10.1707 12.9158 12.0474 13.9158 12.8441 14.1467L12.8516 14.1583C13.6366 14.42 14.3999 13.6 14.8074 12.8575V12.8517C14.9882 12.4925 14.9282 12.1525 14.6641 11.93C14.1957 11.4733 13.4891 10.9692 12.9341 10.645Z')
+                                                            path(d='M10.9741 6.75336C11.775 6.80002 12.1633 7.21836 12.205 8.07753C12.22 8.41336 12.7075 8.39003 12.6925 8.05419C12.6391 6.93252 12.0541 6.30752 11.0008 6.24919C10.68 6.23002 10.65 6.73419 10.9741 6.75336Z')
+                                                        defs
+                                                            clippath#clip0
+                                                                rect(width='20' height='20')
+                                        li.socials__item
+                                            a(href="#").socials__link
+                                                span.icon.icon_size_md.icon_border_round.icon_hover
+                                                    svg(viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                                        path(fill-rule='evenodd' clip-rule='evenodd' d='M15.8007 3.17307C14.1342 1.50467 11.918 0.585451 9.55695 0.584473C4.69178 0.584473 0.732244 4.5439 0.730288 9.41038C0.729635 10.966 1.13603 12.4846 1.90847 13.8232L0.65625 18.397L5.3354 17.1695C6.6247 17.8728 8.0762 18.2435 9.55337 18.2439H9.55706C14.4217 18.2439 18.3817 14.2841 18.3835 9.41745C18.3845 7.0589 17.4672 4.84136 15.8007 3.17307ZM9.55695 16.7533H9.55391C8.23754 16.7527 6.94651 16.3989 5.81996 15.7306L5.55219 15.5716L2.77551 16.3L3.51664 13.5928L3.34215 13.3152C2.60775 12.1472 2.21995 10.7971 2.22061 9.41092C2.22213 5.36604 5.51326 2.07523 9.55989 2.07523C11.5194 2.07588 13.3615 2.83995 14.7465 4.22666C16.1316 5.61337 16.894 7.45659 16.8933 9.4169C16.8916 13.4621 13.6006 16.7533 9.55695 16.7533ZM13.5811 11.2587C13.3606 11.1482 12.2762 10.6149 12.074 10.5412C11.872 10.4676 11.7248 10.4309 11.5779 10.6516C11.4308 10.8723 11.0082 11.3692 10.8795 11.5163C10.7508 11.6635 10.6223 11.6819 10.4017 11.5715C10.1811 11.4611 9.47052 11.2282 8.62806 10.4768C7.97249 9.892 7.52989 9.16978 7.40117 8.94908C7.27266 8.72817 7.40008 8.62032 7.49793 8.49899C7.73667 8.20251 7.97575 7.89168 8.04924 7.74459C8.12284 7.59738 8.08599 7.46855 8.03076 7.3582C7.97575 7.24785 7.53467 6.16229 7.35094 5.72057C7.17177 5.29069 6.9901 5.34875 6.85464 5.34201C6.72613 5.3356 6.57904 5.33429 6.43194 5.33429C6.28495 5.33429 6.04599 5.38941 5.84377 5.61033C5.64166 5.83114 5.07197 6.36462 5.07197 7.45018C5.07197 8.53574 5.86225 9.58444 5.97249 9.73164C6.08273 9.87885 7.52772 12.1065 9.74004 13.0617C10.2662 13.2891 10.677 13.4247 10.9974 13.5264C11.5257 13.6942 12.0064 13.6705 12.3865 13.6138C12.8103 13.5504 13.6912 13.0802 13.8752 12.5651C14.0589 12.0499 14.0589 11.6083 14.0037 11.5163C13.9487 11.4243 13.8016 11.3692 13.5811 11.2587Z')
+                                        li.socials__item
+                                            a(href="#").socials__link
+                                                span.icon.icon_size_md.icon_border_round.icon_hover
+                                                    svg(viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                                        g(clip-path='url(#clip0)')
+                                                            path(d='M16.9833 4.99805C16.9435 4.09477 16.7974 3.47378 16.5881 2.93568C16.3723 2.3645 16.0402 1.85312 15.6051 1.42801C15.18 0.996288 14.6652 0.660819 14.1007 0.44833C13.5594 0.239083 12.9417 0.0930128 12.0384 0.0531873C11.1284 0.00998882 10.8395 0 8.53144 0C6.22337 0 5.93448 0.00998882 5.02783 0.0498144C4.12455 0.08964 3.50356 0.23584 2.96559 0.444957C2.39428 0.660819 1.88291 0.992916 1.4578 1.42801C1.02607 1.85312 0.690734 2.36787 0.478115 2.93243C0.268868 3.47378 0.122798 4.0914 0.0829724 4.99467C0.039774 5.90469 0.0297852 6.19359 0.0297852 8.50166C0.0297852 10.8097 0.039774 11.0986 0.0795995 12.0053C0.119425 12.9085 0.265625 13.5295 0.474871 14.0676C0.690734 14.6388 1.02607 15.1502 1.4578 15.5753C1.88291 16.007 2.39765 16.3425 2.96222 16.555C3.50356 16.7642 4.12118 16.9103 5.02458 16.9501C5.9311 16.9901 6.22013 16.9999 8.5282 16.9999C10.8363 16.9999 11.1252 16.9901 12.0318 16.9501C12.9351 16.9103 13.5561 16.7642 14.094 16.555C15.2365 16.1133 16.1398 15.21 16.5815 14.0676C16.7906 13.5263 16.9368 12.9085 16.9767 12.0053C17.0165 11.0986 17.0265 10.8097 17.0265 8.50166C17.0265 6.19359 17.0231 5.90469 16.9833 4.99805ZM15.4524 11.9389C15.4158 12.7691 15.2764 13.2174 15.1601 13.5163C14.8745 14.2569 14.2867 14.8447 13.5461 15.1304C13.2472 15.2466 12.7956 15.386 11.9686 15.4225C11.072 15.4624 10.8031 15.4723 8.53481 15.4723C6.26657 15.4723 5.99428 15.4624 5.10086 15.4225C4.27062 15.386 3.82229 15.2466 3.52341 15.1304C3.15486 14.9941 2.81939 14.7783 2.5471 14.496C2.26482 14.2203 2.04895 13.8882 1.91274 13.5197C1.79651 13.2208 1.65705 12.7691 1.6206 11.9422C1.58065 11.0456 1.57079 10.7765 1.57079 8.50828C1.57079 6.24003 1.58065 5.96774 1.6206 5.07445C1.65705 4.24421 1.79651 3.79588 1.91274 3.497C2.04895 3.12832 2.26482 2.79298 2.55047 2.52056C2.82601 2.23828 3.1581 2.02241 3.52678 1.88633C3.82567 1.7701 4.27737 1.63064 5.10424 1.59406C6.00089 1.55424 6.26994 1.54425 8.53805 1.54425C10.8097 1.54425 11.0786 1.55424 11.972 1.59406C12.8022 1.63064 13.2506 1.7701 13.5495 1.88633C13.918 2.02241 14.2535 2.23828 14.5258 2.52056C14.8081 2.79622 15.0239 3.12832 15.1601 3.497C15.2764 3.79588 15.4158 4.24746 15.4524 5.07445C15.4922 5.97111 15.5022 6.24003 15.5022 8.50828C15.5022 10.7765 15.4922 11.0422 15.4524 11.9389Z')
+                                                            path(d='M8.53155 4.13464C6.12061 4.13464 4.16449 6.09064 4.16449 8.50171C4.16449 10.9128 6.12061 12.8688 8.53155 12.8688C10.9426 12.8688 12.8986 10.9128 12.8986 8.50171C12.8986 6.09064 10.9426 4.13464 8.53155 4.13464ZM8.53155 11.3345C6.96746 11.3345 5.69875 10.0659 5.69875 8.50171C5.69875 6.93748 6.96746 5.6689 8.53155 5.6689C10.0958 5.6689 11.3644 6.93748 11.3644 8.50171C11.3644 10.0659 10.0958 11.3345 8.53155 11.3345Z')
+                                                            path(d='M14.0909 3.96189C14.0909 4.5249 13.6344 4.98141 13.0713 4.98141C12.5083 4.98141 12.0518 4.5249 12.0518 3.96189C12.0518 3.39876 12.5083 2.94238 13.0713 2.94238C13.6344 2.94238 14.0909 3.39876 14.0909 3.96189Z')
+                                                        defs
+                                                            clippath#clip0
+                                                                rect(width='17' height='17')
+                        .col_xl_33.col_sm_50.share-info__item
+                            .share-info__title Телефон:
+                            a(href="tel:+79716722779").share-info__text +7 (971) 672 27 79
+                        .col_xl_33.col_sm_50.share-info__item
+                            .share-info__title Адрес:
+                            .share-info__text ул. Авнатаняна 14/106
+            .content-block.content-block_border_bottom.single-share__content
+                .content-block__title ﻞﻤﻌﻟا ﻞﻴﺻﺎﻔﺗ
+                .content-block__text يعد عطر اكوا دي جيو بور هوم، مثالي لجميع المناسبات، يمتاز بتركيبته المميزة والعناصر العطرة التي تبقى على بشرتك لساعات طويلة، تميز برائحة عطرة وحضور مميز مع عطر اكو دي بيور هوم من جورجيو ارماني للرجال، هذا العطر الطازج سوف يأخذ حاسة الشم لديك في رحلة إلى المحيط، وسوف تشعر بلمسة هادئة من نسيم بارد، تم تسميته بالعلامة التجارية الشهيرة عالميا جورجيو أرماني، يتضمن على عناصر مالحة وحلوة من ماء البحر، يمكنك أن تشعر بدفء المشمس على بشرتك وكانك تحتها مباشرة، تم تصميم هذا العطر الفريد من قبل صانع العطور ا...
+            .product-slider.content-block.content-block_border_bottom
+                -
+                    const productSlider = [
+                        {
+                            img: './static/images/content/product-slide-1.jpg',
+                            title: 'Кроссовки 45А45-11',
+                            href: '#',
+                            descr: 'Разнообразный и богатый опыт рамки и место обучения кадров влечет за собой процесс внедрения и'
+                        },
+                        {
+                            img: './static/images/content/product-slide-2.jpg',
+                            title: 'Кроссовки 45А99-1',
+                            href: '#',
+                            descr: 'Разнообразный и богатый опыт рамки и место обучения кадров влечет за собой процесс внедрения и'
+                        },
+                        {
+                            img: './static/images/content/product-slide-3.jpg',
+                            title: 'Кроссовки 45А89-0',
+                            href: '#',
+                            descr: 'Разнообразный и богатый опыт рамки и место обучения кадров влечет за собой процесс внедрения и'
+                        },]
+                .swiper-container.product-slider__container
+                    .swiper-wrapper
+                        each obj, index in productSlider
+                            .swiper-slide.product-slider__slide
+                                .product-slider__card.card-add-product
+                                    .card-add-product__index= '№' + (index+1)
+                                    .product-slider__inner.card-add-product__inner
+                                        .card-add-product__title= obj.title
+                                        .product-slider__descr.card-add-product__descr= obj.descr
+                                    .product-slider__thumb.card-add-product__thumb
+                                        img.form-group__img(src= obj.img)
+                .swiper-button-prev.product-slider__btn-prev
+                .swiper-button-next.product-slider__btn-next
+            .shares-slider.shares-slider_link_top.content-block
+                -
+                    const sharesSlider = [
+                        {
+                            img: './static/images/content/user-shares-1.jpg',
+                            title: 'ﺎﻨﻐﻤﻟا ﺪﺸﻤﻟا ﻲﺒﻃ ﺮﻬﻇ ﺪﺸﻣ\n' +
+                                    '...',
+                            href: './single-share.html',
+                            descr: ''
+                        },
+                        {
+                            img: './static/images/content/user-shares-2.jpg',
+                            title: 'Philips Multigroom MG374ماكنة حلاقة للرجال',
+                            href: './single-share.html',
+                            descr: ''
+                        },
+                        {
+                            img: './static/images/content/user-shares-3.jpg',
+                            title: 'Acqua Di Gio Pour Homme',
+                            href: './single-share.html',
+                            descr: ''
+                        },]
+                a(href="#").shares-slider__link.link
+                    span.link_underline_pink Посмотреть остальные акции “Modnova”
+                .swiper-container.shares-slider__container
+                    .swiper-wrapper
+                        each obj, index in sharesSlider
+                            .swiper-slide.shares-slider__slide
+                                .shares-slider__card.card-user-shares
+                                    a(href= obj.href).card__link.card-user-shares__link
+                                        img(src=obj.img).card__img.card-user-shares__img.shares-slider__img
+                                    .card-user-shares__inner.shares-slider__inner
+                                        .card__title.card-user-shares__title= obj.title
+                                        a(href="#").card-user-shares__show-link Посмотреть
+                .swiper-button-prev.shares-slider__btn-prev
+                .swiper-button-next.shares-slider__btn-next
+    include modules/seo/section_seo

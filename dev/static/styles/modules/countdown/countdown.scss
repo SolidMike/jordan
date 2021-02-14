@@ -1,0 +1,70 @@
+.countdown {
+  &__tick {
+    & > div {
+      font-size: 75px!important;
+      font-weight: 700;
+      @media all and (max-width: 576px) {
+        font-size: calc(1.5rem + 2vw)!important;
+      }
+    }
+  }
+  &__tick-group {
+    text-align: left;
+    &:nth-child(2) {
+      margin-left: calc(1rem + 1.5vw);
+    }
+    &:nth-child(3) {
+      margin-left: 2rem;
+      position: relative;
+      .tick-flip-panel {
+        background-color: $pink;
+      }
+      &:after {
+        position: absolute;
+        content: url(../images/general/counter-dot.png);
+        top: 67%;
+        right: 109%;
+        transform: translateY(-50%);
+      }
+      &:before {
+        position: absolute;
+        content: url(../images/general/counter-dot.png);
+        top: 57%;
+        right: 109%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &__tick-label {
+    font-size: 1rem;
+    color: #7C7C7C;
+    font-weight: 600;
+    margin-left: .4rem;
+  }
+  .tick-flip-panel {
+    background-color: #B6B6B6;
+    box-shadow: none;
+  }
+  .tick-flip-shadow,
+  .tick-flip-card-shadow,
+  .tick-flip-panel-back-highlight,
+  .tick-flip-panel-back-shadow {
+    display: none;
+  }
+  .tick-flip-panel-back:after {
+    background-image: unset;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .tick-flip {
+    max-height: 100px;
+    max-width: 62px;
+    min-width: unset;
+  }
+  .tick-flip-panel-text-wrapper {
+    left: -10px;
+    @media all and (max-width: 576px) {
+      left: 0px;
+    }
+  }
+}

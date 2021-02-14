@@ -1,0 +1,43 @@
+.sandwich {
+  cursor: pointer;
+  height: 38px;
+  width: 45px;
+  flex: none;
+  top: 1vmin;
+  z-index: 40;
+  left: 2vmin;
+  position: fixed;
+  background-color: $pink;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @media (min-width: 625px) {
+    display: none;
+  }
+  &.is {
+    &-active {
+      .sandwich__line {
+        &--top {
+          transform: rotateZ(-45deg) translate(-9px, 9px);
+        }
+        &--middle { opacity: 0; }
+        &--bottom {
+          transform: rotateZ(45deg) translate(-9px, -9px);
+        }
+      }
+      .aside-menu__wrap {
+        display: block;
+      }
+    }
+  }
+  &__line {
+    background-color: $white;
+    display: block;
+    height: 3px;
+    transition: all linear .4s;
+    width: 80%;
+  }
+}

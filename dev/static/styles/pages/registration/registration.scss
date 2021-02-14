@@ -1,0 +1,10 @@
+.registration-page {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0) 40%, #fff);
+  padding-top: calc(1.5rem + 3vw);
+  padding-bottom: calc(1.5rem + 2vw);
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,30 @@
+.shares-slider {
+  padding-right: 2vw;
+  padding-left: 2vw;
+  position: relative;
+  &_link_top {
+    padding-top: calc(4rem + 2vw);
+  }
+  &__card {
+    max-height: 13.75rem;
+    grid-template-rows: minmax(10.125rem, 1fr);
+  }
+  &__link {
+    display: inline-block;
+    position: absolute;
+    top: calc(1rem + 1.3vw);
+    right: 0;
+    font-weight: 600;
+  }
+  [class*="btn-next"],
+  [class*="btn-prev"] {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/general/product-slider-btn-next.png");
+    right: -7px;
+  }
+  [class*="btn-prev"] {
+    background-image: url("../images/general/product-slider-btn-prev.png");
+    left: -7px;
+  }
+}

@@ -1,0 +1,27 @@
+.add-product {
+  @media (max-width: 850px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  padding: calc(1rem + 1vw) calc(1rem + 2.5vw) calc(1rem + 2.5vw) calc(1rem + 2.5vw);
+  border-bottom: 1px solid #7C7C7C;
+  display: flex;
+  flex-direction: column;
+  &__btn {
+    margin-left: auto;
+    font-size: 18px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1570px;
+    grid-gap: 1rem 5%;
+    padding: 0;
+    margin-top: calc(1rem + 1vw);
+    @media (max-width: 850px) {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

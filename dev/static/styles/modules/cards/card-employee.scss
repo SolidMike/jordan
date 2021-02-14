@@ -1,0 +1,45 @@
+.card-employee {
+  position: relative;
+  min-height: 19rem;
+  text-align: center;
+  padding: 6.938rem 1rem 1rem;
+  border-radius: 0.938rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  &__photo {
+    bottom: 35%;
+    left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    position: absolute;
+    height: 235px;
+    width: 235px;
+    object-fit: cover;
+  }
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  &__position {
+    font-weight: 300;
+    margin-top: 1.5rem;
+    color: #7C7C7C;
+  }
+  &__email {
+    font-size: 0.938rem;
+    font-weight: 300;
+    margin-top: 1.8rem;
+    text-decoration: none;
+    color: $black;
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__phone {
+    margin-top: 1.2rem;
+    font-size: 1.188rem;
+    padding: .4rem 3.8rem;
+  }
+}

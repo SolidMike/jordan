@@ -1,0 +1,103 @@
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  background: linear-gradient(92.29deg, #EC5F5E 6.91%, #e34385 99.55%) padding-box, linear-gradient(92.29deg, #EC5F5E 6.91%, #e34385 99.55%) border-box;
+  color: $white;
+  padding: .75rem 3.125rem;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  font-weight: 700;
+  transition: all .4s;
+  text-decoration: none;
+  max-width: 290px;
+  &:hover {
+    background: linear-gradient(92.29deg, #fff 6.91%, #fff 99.55%) padding-box, linear-gradient(92.29deg, #EC5F5E 6.91%, #EC5F5E 99.55%) border-box;
+    color: $pink;
+  }
+  &_border_round {
+    border-radius: 50px;
+  }
+  &_icon_left {
+    flex-direction: row-reverse;
+    .btn__icon {
+      margin-right: 1rem;
+      margin-left: 0;
+    }
+  }
+  &_type_add {
+    padding: .2rem 2.6rem .2rem .2rem;
+    max-width: 270px;
+    justify-content: flex-end;
+    .btn__icon {
+      background-color: $white;
+      margin-right: 2rem;
+    }
+    &:hover {
+      .btn__icon {
+        background-color: $pink;
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+  &_type_add-reverse {
+    padding: .2rem .2rem .2rem 2rem;
+    max-width: 270px;
+    justify-content: flex-start;
+    .btn__icon {
+      background-color: $white;
+      margin-left: 2rem;
+    }
+    &:hover {
+      .btn__icon {
+        background-color: $pink;
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+  &_type_edit {
+    &:hover {
+      .btn__icon {
+        svg {
+          fill: $pink;
+        }
+      }
+    }
+    .btn__icon {
+      svg {
+        fill: $white;
+      }
+    }
+  }
+  &_type_delete {
+    border-radius: 50%;
+    background-color: $pink;
+    border: 1px solid $white;
+    position: absolute;
+    color: #fff;
+    top: -5px;
+    right: 5px;
+    text-align: center;
+    line-height: 1;
+    padding: .1rem .2rem;
+    text-decoration: none;
+    z-index: 10;
+  }
+  &__icon {
+    margin-left: 1rem;
+    flex: none;
+  }
+  &_type_back {
+    height: 47px;
+    width: 162px;
+    @media (max-width: 400px) {
+      margin-top: 1rem;
+    }
+  }
+}

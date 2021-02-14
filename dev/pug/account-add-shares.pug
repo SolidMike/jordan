@@ -1,0 +1,103 @@
+extends template/main
+
+block variables
+    - var title = 'Личный кабинет Оформление акции'
+    - var pageClass = 'accountAddShares'
+
+block content
+    section.page-header
+        .page-header__container.container
+            ul.breadcrumbs
+                +breadcrumbs-item('Категории')
+                +breadcrumbs-item('Название города','#')
+                +breadcrumbs-item('Главная', '/')
+    section.account
+        .container
+            .account__top-block
+                +linkWithIcon('Назад', './account.html', '<svg viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                '<path d="M9 15L3 8.34884L9 2" stroke="white" stroke-width="3" stroke-linecap="round"/>\n' +
+                '</svg>\n', 'btn_border_round btn_icon_left btn_type_back', 'icon_size_xs')
+                .account__title-block
+                    .title.title_align_right Добавить акцию
+                    .account__notification Каждая 11 публикация полностью бесплатна!
+            form(action="#" method="post")#personal-info-edit.account__form
+                .flex-grid.account__flex-grid
+                    .shares-images.account__col.col_xl_50.col_md_100
+                        .shares-images__title Изображения акции
+                        .shares-images__notification Максимально допустимое количество добавленных изображений равно 19
+                        .shares-images__list
+                            .shares-images__item
+                                .form-group.card-add-product__thumb.shares-images__thumb
+                                    label(for="shares-images__thumb-upload").form-group__label.form-group__label_type_file
+                                        span.icon.icon_size_lg.shares-images__icon
+                                    input(type='file' name='ShareThumbUpload' id="shares-images__thumb-upload" value="" multiple).form-group__thumb-upload
+                    .flex-grid.account__flex-grid.account__col.col_xl_50.col_md_100.col.col_flex_auto
+                        .account__col.col_xl_100.subtitle Основаня информация
+                        .account__col.col_xl_50.col_xs_100.col
+                            -const subCats = [{value: 'Спортивная обувь', selected: true, text: 'Спортивная обувь'}, {value: 'Куртки', selected: false, text: 'Куртки'}]
+                            -const cities = [{value: 'قرفملا', selected: true, text: 'قرفملا'}, {value: 'Москва', selected: false, text: 'Москва'}]
+                            +input('selectInput', 'Подкатегория', 'subCategory', '', 'Спортивная обувь', '', '', subCats)
+                            +input('selectInput', 'Город', 'city', '', 'Город', '', '', cities)
+                        .account__col.col_xl_50.col_xs_100.col
+                            -const cats = [{value: 'Одежда/Обувь', selected: true, text: 'Одежда/Обувь'}, {value: 'Бытовая техника', selected: false, text: 'Бытовая техника'}]
+                            +input('selectInput', 'Категория акции', 'cat', '', 'Одежда/Обувь', '', '', cats)
+                            .flex-grid.date-picker
+                                .date-picker__item.col_xl_50.col
+                                    +input('', '&nbsp;', 'date_to', '', 'Дата', '', 'form-group__input_size_sm', '')(id="datetimepicker-to")
+                                .date-picker__item.col_xl_50.col
+                                    +input('', 'Срок действия', 'date_from', '', 'Дата', '', 'form-group__input_size_sm', '')(id="datetimepicker-from")
+                    .col_xl_25.col_lg_50.col_xs_100.account__col.col
+                        +input('', 'Номер телефона', 'phone', '+7 (971) 672 27 79', '', '', '', '')
+                        +input('', 'Адрес', 'address', 'ул. Авнатаняна 14/106', '', '', '', '')
+                    .col_xl_25.col_lg_50.col_xs_100.account__col.col
+                        +input('', 'Название предприятия', 'organization', 'Modnova', '', '', '', '')
+                        +input('', 'Сайт', 'website', 'www.modnova.com', '', '', '', '')
+                        +input('', 'Электронный адрес', 'email', 'modnova@gmail.com', '', '', '', '')
+                    .col_xl_50.col_lg_100.account__col.col(style="display: flex; flex-direction:column;")
+                        +input('', 'Название акции', 'share_name', 'супер скидка 50% на все мужские спортивные кроссовки', '', '', 'form-group__input_size_lg', '')
+                        +input('textareaInput', 'Описание акции', 'share_name', 'Спортивная обувь', '', '', 'form-group__textarea_size_lg', '')(style="flex: auto;")
+                .account__col.flex-grid.account__socials
+                    +inputWithIcon('Введите ссылку', 'fb_link', 'https://www.facebook.com/Ope...', '', 'form-group__label_text_small', 'form-group__input_icon_right form-group__input_type_socials form-group__input_border_dashed', '<svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                    '<path d="M6.54 2.65667H8.00067V0.112667C7.74867 0.078 6.882 0 5.87267 0C3.76667 0 2.324 1.32467 2.324 3.75933V6H0V8.844H2.324V16H5.17333V8.84467H7.40333L7.75733 6.00067H5.17267V4.04133C5.17333 3.21933 5.39467 2.65667 6.54 2.65667Z"/>\n' +
+                    '</svg>', 'icon_size_lg icon_border_round')(class="col")
+                    +inputWithIcon('Введите ссылку', 'inst_link', 'https://www.facebook.com/Ope...', '', 'form-group__label_text_small', 'form-group__input_icon_right form-group__input_type_socials form-group__input_border_dashed', '<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)">\n' +
+                    '<path d="M16.9833 4.99805C16.9435 4.09477 16.7974 3.47378 16.5881 2.93568C16.3723 2.3645 16.0402 1.85312 15.6051 1.42801C15.18 0.996288 14.6652 0.660819 14.1007 0.44833C13.5594 0.239083 12.9417 0.0930128 12.0384 0.0531873C11.1284 0.00998882 10.8395 0 8.53144 0C6.22337 0 5.93448 0.00998882 5.02783 0.0498144C4.12455 0.08964 3.50356 0.23584 2.96559 0.444957C2.39428 0.660819 1.88291 0.992916 1.4578 1.42801C1.02607 1.85312 0.690734 2.36787 0.478115 2.93243C0.268868 3.47378 0.122798 4.0914 0.0829724 4.99467C0.039774 5.90469 0.0297852 6.19359 0.0297852 8.50166C0.0297852 10.8097 0.039774 11.0986 0.0795995 12.0053C0.119425 12.9085 0.265625 13.5295 0.474871 14.0676C0.690734 14.6388 1.02607 15.1502 1.4578 15.5753C1.88291 16.007 2.39765 16.3425 2.96222 16.555C3.50356 16.7642 4.12118 16.9103 5.02458 16.9501C5.9311 16.9901 6.22013 16.9999 8.5282 16.9999C10.8363 16.9999 11.1252 16.9901 12.0318 16.9501C12.9351 16.9103 13.5561 16.7642 14.094 16.555C15.2365 16.1133 16.1398 15.21 16.5815 14.0676C16.7906 13.5263 16.9368 12.9085 16.9767 12.0053C17.0165 11.0986 17.0265 10.8097 17.0265 8.50166C17.0265 6.19359 17.0231 5.90469 16.9833 4.99805ZM15.4524 11.9389C15.4158 12.7691 15.2764 13.2174 15.1601 13.5163C14.8745 14.2569 14.2867 14.8447 13.5461 15.1304C13.2472 15.2466 12.7956 15.386 11.9686 15.4225C11.072 15.4624 10.8031 15.4723 8.53481 15.4723C6.26657 15.4723 5.99428 15.4624 5.10086 15.4225C4.27062 15.386 3.82229 15.2466 3.52341 15.1304C3.15486 14.9941 2.81939 14.7783 2.5471 14.496C2.26482 14.2203 2.04895 13.8882 1.91274 13.5197C1.79651 13.2208 1.65705 12.7691 1.6206 11.9422C1.58065 11.0456 1.57079 10.7765 1.57079 8.50828C1.57079 6.24003 1.58065 5.96774 1.6206 5.07445C1.65705 4.24421 1.79651 3.79588 1.91274 3.497C2.04895 3.12832 2.26482 2.79298 2.55047 2.52056C2.82601 2.23828 3.1581 2.02241 3.52678 1.88633C3.82567 1.7701 4.27737 1.63064 5.10424 1.59406C6.00089 1.55424 6.26994 1.54425 8.53805 1.54425C10.8097 1.54425 11.0786 1.55424 11.972 1.59406C12.8022 1.63064 13.2506 1.7701 13.5495 1.88633C13.918 2.02241 14.2535 2.23828 14.5258 2.52056C14.8081 2.79622 15.0239 3.12832 15.1601 3.497C15.2764 3.79588 15.4158 4.24746 15.4524 5.07445C15.4922 5.97111 15.5022 6.24003 15.5022 8.50828C15.5022 10.7765 15.4922 11.0422 15.4524 11.9389Z"/><path d="M8.53155 4.13464C6.12061 4.13464 4.16449 6.09064 4.16449 8.50171C4.16449 10.9128 6.12061 12.8688 8.53155 12.8688C10.9426 12.8688 12.8986 10.9128 12.8986 8.50171C12.8986 6.09064 10.9426 4.13464 8.53155 4.13464ZM8.53155 11.3345C6.96746 11.3345 5.69875 10.0659 5.69875 8.50171C5.69875 6.93748 6.96746 5.6689 8.53155 5.6689C10.0958 5.6689 11.3644 6.93748 11.3644 8.50171C11.3644 10.0659 10.0958 11.3345 8.53155 11.3345Z"/><path d="M14.0909 3.96189C14.0909 4.5249 13.6344 4.98141 13.0713 4.98141C12.5083 4.98141 12.0518 4.5249 12.0518 3.96189C12.0518 3.39876 12.5083 2.94238 13.0713 2.94238C13.6344 2.94238 14.0909 3.39876 14.0909 3.96189Z"/></g><defs><clipPath id="clip0"><rect width="17" height="17"/></clipPath></defs></svg>\n', 'icon_size_lg icon_border_round')(class="col")
+                    +inputWithIcon('Введите ссылку', 'twitter_link', 'https://www.facebook.com/Ope...', '', 'form-group__label_text_small', 'form-group__input_icon_right form-group__input_type_socials form-group__input_border_dashed', '<svg viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                    '<path d="M22 2.17863C21.1819 2.5375 20.3101 2.77537 19.4012 2.89087C20.3363 2.33262 21.0499 1.45537 21.3854 0.398C20.5136 0.91775 19.5511 1.28488 18.5254 1.48975C17.6976 0.608375 16.5179 0.0625 15.2309 0.0625C12.7339 0.0625 10.7236 2.08925 10.7236 4.57388C10.7236 4.93138 10.7539 5.27512 10.8281 5.60237C7.0785 5.4195 3.76063 3.62238 1.53175 0.88475C1.14262 1.55988 0.914375 2.33262 0.914375 3.1645C0.914375 4.7265 1.71875 6.11112 2.91775 6.91275C2.19313 6.899 1.48225 6.68862 0.88 6.35725C0.88 6.371 0.88 6.38888 0.88 6.40675C0.88 8.5985 2.44337 10.419 4.4935 10.8384C4.12637 10.9388 3.72625 10.9869 3.311 10.9869C3.02225 10.9869 2.73075 10.9704 2.45712 10.9099C3.0415 12.696 4.69975 14.0091 6.6715 14.0518C5.137 15.2521 3.18863 15.9754 1.07938 15.9754C0.7095 15.9754 0.35475 15.9589 0 15.9135C1.99787 17.2019 4.36562 17.9375 6.919 17.9375C15.2185 17.9375 19.756 11.0625 19.756 5.10325C19.756 4.90387 19.7491 4.71138 19.7395 4.52025C20.6346 3.885 21.3867 3.09162 22 2.17863Z"/>\n' +
+                    '</svg>', 'icon_size_lg icon_border_round')(class="col")
+                .account__add-product.add-product
+                    +buttonWithIcon('Добавить товар', false, '<svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                    '<path d="M16.056 6.496V9.567H9.618V16.005H6.547V9.567H0.146V6.496H6.547V0.0950001H9.618V6.496H16.056Z"/>\n' +
+                    '</svg>\n', 'btn_border_round btn_type_add btn_icon_left add-product__btn', 'icon_size_lg icon_border_round', 'button')(id="add-card-btn")
+                    .add-product__container
+                        .card-add-product
+                            a.btn_type_delete(href='javascript:void(0);' onclick='$(this).parent().remove();') ✖
+                            .card-add-product__index №1
+                            .card-add-product__inner
+                                .form-group
+                                    label(for="card-add-product__title").card-add-product__label.card-add-product__label_type_text
+                                    input(type="text" name="cardAddProductTitle" id="card-add-product__title" value="" placeholder="Введите название").card-add-product__title.card-add-product__title_is_empty
+                                .form-group
+                                    label(for="card-add-product__descr").card-add-product__label.card-add-product__label_type_textarea
+                                    textarea(name="cardAddProductDescr" id="card-add-product__descr" placeholder="Введите описание" rows="3").card-add-product__descr.card-add-product__descr_is_empty
+                            .form-group.card-add-product__thumb
+                                label(for="card-add-product__thumb-upload").form-group__label.form-group__label_type_file
+                                    #card-add-product__img
+                                    span.icon.icon_size_lg.icon_border_round.card-add-product__icon
+                                input(type='file' name='cardAddProductThumbUpload' id="card-add-product__thumb-upload" value="").form-group__thumb-upload
+                .flex-grid.account__flex-grid
+                    .col_xl_50.col_sm_100.account__col
+                        .account__add-btns-wrapper
+                            +button('Опубликовать', false, 'btn_border_round', '')
+                            +button('Сохранить', false, 'btn_border_round', '')
+                    .col_xl_50.col_sm_100.account__col
+                        .account__publication-type.publication-type
+                            -const publicationType = [{value: 'VIP публикация на неделю', selected: true, text: 'VIP публикация на неделю'}, {value: 'Публикация на день', selected: false, text: 'Публикация на день'}]
+                            +input('selectInput', 'Вид публикации', 'publication_type', '', 'Вид публикации', '', 'form-group__select_theme_pink publication-type__select', publicationType)(class="publication-type__form-group")
+                            .publication-type__notification
+                                |*Публиковать акции в начало категорий и на главную
+                                br
+                                |страницу может только администратор сайта.
+                            .publication-type__links-list
+                                a.link_underline_black.link.publication-type__link(href="tel:+97126722779") +(971 2) 672 27 79
+                                a(href="").link_underline_pink.link.publication-type__link.link Связаться с администратором

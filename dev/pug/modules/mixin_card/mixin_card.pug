@@ -1,0 +1,17 @@
+mixin cardShares(obj)
+    .card.card-shares
+        a(href= obj.href).card__link.card-shares__link
+            img(src=obj.img).card__img.card-shares__img
+        .card__subtitle.card-shares__subtitle= obj.subtitle
+        a(href= obj.href).card__link.card-shares__link
+            .card__title.card-shares__title= obj.title
+        block card-footer
+
+mixin cardUserShares(obj)
+    .card.card-user-shares
+        a(href= obj.href).card__link.card-user-shares__link
+            img(src=obj.img).card__img.card-user-shares__img
+        .card-user-shares__inner
+            .card__title.card-user-shares__title= obj.title
+            a(href= obj.href).card-user-shares__show-link Посмотреть
+        block card-footer

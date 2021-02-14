@@ -1,0 +1,10 @@
+extends template/main
+
+block variables
+    - var title = 'Станица регистрации'
+    - var pageClass = 'registrationPage'
+
+block content
+    section.registration-page
+        .container.registration-page__container
+            include ./modules/forms/form-success

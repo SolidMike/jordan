@@ -1,0 +1,31 @@
+.card-shares {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &__btn {
+    margin-top: calc(1rem + 0.8vw);
+    margin-left: auto;
+    &_type_edit {
+      position: absolute;
+      top: 63%;
+      right: .75rem;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      padding: .5rem;
+      @media (max-width: 1200px) {
+        top: 60%;
+      }
+      .btn__icon {
+        margin: 0;
+      }
+    }
+  }
+  &__title {
+    flex: 1;
+  }
+  &__img {
+    height: calc(12.5rem + 3vw);
+  }
+}

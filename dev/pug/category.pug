@@ -1,0 +1,271 @@
+extends template/main
+
+block variables
+    - var title = 'Категория'
+    - var pageClass = 'categoryPage'
+
+block content
+    section.main-slider
+        .container
+            include modules/main-slider/main-slider
+    section.page-header
+        .page-header__container.container
+            ul.breadcrumbs
+                +breadcrumbs-item('Подарки')
+                +breadcrumbs-item('Мода и стиль','#')
+                +breadcrumbs-item('Название города','#')
+                +breadcrumbs-item('Главная', '/')
+    .main-layout
+        .main-layout__sort
+            -
+                const sort = [
+                    {value: '', selected: true, text: 'Сортировать'},
+                    {value: 'by_name', selected: true, text: 'По имени'},
+                    {value: 'by_price', selected: false, text: 'По цене'}]
+            form(action="#" method="post")#sort
+                +input('selectInput', '', 'sort_by', '', 'Сортировать', '', 'form-group__select_type_sort', sort)
+            .sandwich
+                .sandwich__line.sandwich__line--top
+                .sandwich__line.sandwich__line--middle
+                .sandwich__line.sandwich__line--bottom
+        main.cards-grid
+            -
+                const stockItmes = [
+                    {
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw)',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: '',
+                        badgeMode: '',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    }, {
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw)',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: '',
+                        badgeMode: '',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    }, {
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw)',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: '',
+                        badgeMode: '',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    }, {
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw)',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: '',
+                        badgeMode: '',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    }, {
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw)',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: '',
+                        badgeMode: '',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'VIP',
+                        badgeMode: 'badge_type_vip',
+                        href: './single-share.html',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },]
+            each obj in stockItmes
+                + cardShares(obj)
+                    block card-footer
+                        .badge(class= obj.badgeMode)= obj.badge
+                        +linkWithIcon('Добавить в', '#', '<svg viewBox="0 0 26 23"  fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                        '<path d="M12.669 22.8629C12.8307 22.9531 13.0121 23.0002 13.1964 23L13.2274 22.9895C13.4367 22.9883 13.6412 22.9261 13.8169 22.8102C15.3159 21.7848 16.7557 20.6721 18.1292 19.4778C22.8034 15.5759 25.2749 12.6442 25.6679 10.6194C25.9014 9.80457 26.013 8.95842 25.9988 8.10958C25.9471 3.63824 22.5966 0 18.5325 0H18.3877C17.3537 0.0123051 16.3338 0.246902 15.3947 0.68847C14.4557 1.13004 13.6185 1.76865 12.9379 2.56259C12.2357 1.79164 11.3841 1.17793 10.437 0.760389C9.48997 0.34285 8.46815 0.130596 7.43638 0.137093C6.48573 0.143645 5.54594 0.343857 4.67222 0.725969C3.7985 1.10808 3.00847 1.66439 2.34852 2.36222C0.809753 3.98688 -0.034433 6.16751 0.00107655 8.42595C0.00552242 9.24198 0.131037 10.0526 0.373359 10.8304C0.859394 12.95 3.34128 15.7235 8.19129 19.5938C9.44995 20.5851 11.3263 21.9172 12.157 22.507L12.183 22.5254L12.5242 22.768L12.669 22.8629Z" fill="white"/>\n' +
+                        '</svg>', obj.btnMode, 'icon_have_stroke icon_size_sm')
+        aside.aside-menu
+            -
+                var menuList = [
+                    {
+                        title: "Мода и стиль",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [
+                            {
+                                title: "(168) Одежда/обувь",
+                                link: "#",
+                            },
+                            {
+                                title: "(67) Подарки",
+                                link: "#",
+                            },
+                            {
+                                title: "(288) Для свадьбы",
+                                link: "#",
+                            },
+                            {
+                                title: "(67) Красота/здоровье",
+                                link: "#",
+                            },
+                            {
+                                title: "(144) Наручные часы",
+                                link: "#",
+                            },
+                            {
+                                title: "(12) Мода разное",
+                                link: "#",
+                            }
+                        ]
+                    }, {
+                        title: "Детский мир",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Недаижемость",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Транспорт",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Работа",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Животные ",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Дом и сад",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Электроника",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Бизнес и услуги",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Хобби, отдых и спорт",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Отдам даром",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }, {
+                        title: "Обмен",
+                        link: "#",
+                        showFooter: true,
+                        subnav: [],
+                    }
+                ];
+
+
+            .aside-menu__wrap
+                .aside-menu__title Категории
+                - var menuSelected = 'Мода и стиль';
+                - var submenuSelected = '(168) Одежда/обувь';
+                +menu(menuSelected)
+        .main-layout__link
+            a(href="").link_underline_grey.link Прогрузить еще
+    include modules/seo/section_seo

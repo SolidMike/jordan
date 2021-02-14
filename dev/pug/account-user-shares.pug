@@ -1,0 +1,104 @@
+extends template/main
+
+block variables
+    - var title = 'Личный кабинет акции пользователя'
+    - var pageClass = 'accountUserSharesPage'
+
+block content
+    section.page-header
+        .page-header__container.container
+            .title.title_align_right Мои акции
+    section.account-user-shares
+        .account-user-shares__grid
+            -
+                const stockItmes = [
+                    {
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'не опубликовано',
+                        badgeMode: 'badge_type_unpublished',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw) ',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: 'опубликовано',
+                        badgeMode: 'badge_type_published',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'не опубликовано',
+                        badgeMode: 'badge_type_unpublished',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },{
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'не опубликовано',
+                        badgeMode: 'badge_type_unpublished',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw) ',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: 'опубликовано',
+                        badgeMode: 'badge_type_published',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'не опубликовано',
+                        badgeMode: 'badge_type_unpublished',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },{
+                        img: './static/images/content/stock-1.jpg',
+                        title: 'لﺎﻔﻃأو ﺔﻴﺑﺎﺒﺷ مﻮﻧ ﺔﻓﺮﻏ',
+                        subtitle: 'لﺰﻨﻤﻟا ثﺎﺛأ\n',
+                        badge: 'не опубликовано',
+                        badgeMode: 'badge_type_unpublished',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-2.jpg',
+                        title: 'اﺪﺟ ﻒﻴﻈﻧ (call of duty mw) ',
+                        subtitle: 'ﺎﻬﺗﺎﻘﺤﻠﻣو ﻮﻳﺪﻴﻓ بﺎﻌﻟا',
+                        badge: 'опубликовано',
+                        badgeMode: 'badge_type_published',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },
+                    {
+                        img: './static/images/content/stock-3.jpg',
+                        title: 'الإصدار المطور من ',
+                        subtitle: 'موبايل - تابلت',
+                        badge: 'не опубликовано',
+                        badgeMode: 'badge_type_unpublished',
+                        href: '#',
+                        btnMode: 'btn_icon_left btn_border_round card__btn card__btn_type_remove card-shares__btn'
+                    },]
+            each obj in stockItmes
+                + cardShares(obj)
+                    block card-footer
+                        +linkWithIcon('', './account-add-shares.html', '<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">\n' +
+                        '<path d="M18 2.81004C17.9993 2.05803 17.7053 1.35147 17.1721 0.820422C16.0725 -0.274914 14.2847 -0.273403 13.1863 0.824542L1.83948 12.1977C1.4704 12.5659 1.18867 13.0217 1.0247 13.5159L1.01411 13.5481L0 18L4.47187 17.0005L4.50516 16.9895C5.00038 16.8258 5.45723 16.5449 5.82727 16.1756L17.1756 4.80104C17.7078 4.26903 18.0007 3.56192 18 2.81004ZM2.47983 16.0057L2.00566 15.5321L2.34805 14.0286L3.98958 15.6683L2.47983 16.0057ZM16.179 3.8087L5.16174 14.8515L3.16668 12.8585L10.7135 5.29432L11.8627 6.44157L12.8579 5.448L11.7067 4.29869L12.7773 3.22574L13.9306 4.3771L14.9259 3.38353L13.7705 2.2301L14.1828 1.81688C14.7323 1.26756 15.6275 1.26674 16.178 1.8151C16.4449 2.08096 16.5921 2.43472 16.5925 2.81114C16.5927 3.1877 16.4462 3.54159 16.179 3.8087ZM7.40442 16.5796H18V17.9848H6.0017L7.40442 16.5796Z"/>\n' +
+                        '</svg>', 'btn_type_edit card-shares__btn_type_edit', 'icon_size_xs')
+                        .badge(class= obj.badgeMode)= obj.badge
+                        .card__date Последнее изм: 11.09.2020
+        .container.account-user-shares__pagination
+            include modules/pagination/pagination
+    include modules/seo/section_seo

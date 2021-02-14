@@ -1,0 +1,16 @@
+.account-user-shares {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc((320px - 2rem) + 4vw), 1fr));
+    grid-gap: calc(1.2rem + 2.2vw) calc(1rem + 1.6vw);
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 1vw;
+    @media (max-width: 350px) {
+      grid-template-columns: repeat(auto-fit, minmax(calc(320px - 2rem), 1fr));
+    }
+  }
+  &__pagination {
+    margin-top: calc(1.8rem + 3vw);
+  }
+}

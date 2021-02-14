@@ -1,0 +1,82 @@
+.thumbs-slider {
+  position: relative;
+  height: 610px;
+  @media all and (max-width: 576px) {
+    height: 280px;
+  }
+  &__badge {
+    margin-left: .8rem;
+    margin-top: .4rem;
+    font-size: 1.625rem;
+    letter-spacing: 0.29rem;
+    padding: .2rem 1.675rem .2rem 1.965rem;
+    @media all and (max-width: 576px) {
+      font-size: 1rem;
+      padding: .2rem 1rem .2rem 1.29rem;
+    }
+  }
+  &__gallery-top {
+    height: 74%;
+    width: 100%;
+    @media all and (max-width: 576px) {
+      height: 65%;
+    }
+  }
+  &__gallery-thumbs {
+    height: 26%;
+    padding: 20px 0;
+    @media all and (max-width: 576px) {
+      height: 35%;
+    }
+  }
+  &__thumb,
+  &__slide {
+    border: 1px solid #B6B6B6;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+  }
+  &__thumb {
+    width: 25%;
+    height: 100%;
+  }
+  &__btns-wrapper {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 2.25rem;
+    z-index: 10;
+  }
+  &__btn-prev,
+  &__btn-next {
+    margin-top: 0;
+    position: unset;
+    top: auto;
+    bottom: 1.2rem;
+    height: 36px;
+    width: 100px;
+    padding: 0;
+      &:hover {
+        span {
+          background-image: url("../images/general/thumbs-slider-arrow-hover.png");
+        }
+      }
+      span {
+        height: 8px;
+        width: 50%;
+        background-image: url("../images/general/thumbs-slider-arrow.png");
+      }
+    &.swiper-button-disabled {
+      border-radius: 50%;
+      background: #C4C4C4;
+      opacity: 1;
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &__btn-next {
+    margin-left: .9rem;
+      span {
+        transform: rotate(180deg);
+      }
+  }
+}

@@ -1,0 +1,17 @@
+.content-block {
+  text-align: right;
+  padding: calc(1.4rem + 3vw) 0;
+  &__title {
+    font-family: 'Tahoma';
+    font-weight: 700;
+    font-size: calc(1.25rem + 0.3vw);
+  }
+  &__text {
+    margin-top: calc(1rem + 2vw);
+    font-size: 1.125rem;
+    color: #5E5D5D;
+  }
+  &_border_bottom {
+    border-bottom: 1px solid #7C7C7C;
+  }
+}

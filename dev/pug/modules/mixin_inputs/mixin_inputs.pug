@@ -1,0 +1,22 @@
+mixin input(type, labelText, name, placeholder, value, labelMode, inputMode, options)
+    case type
+        when 'textareaInput'
+            .form-group&attributes(attributes)
+                label.form-group__label(class=labelMode for=name) #{labelText}
+                textarea.form-group__textarea(name=name, id=name, placeholder=placeholder, class=inputMode)
+        when 'selectInput'
+            .form-group&attributes(attributes)
+                label.form-group__label(class=labelMode for=name) #{labelText}
+                select.form-group__select(class=inputMode, id=name,)
+                    each option in options
+                        option(value=option.value selected=selected) #{option.text}
+        default
+            .form-group&attributes(attributes)
+                label.form-group__label(class=labelMode for=name) !{labelText}
+                input(name=name, id=name, type=type, placeholder=placeholder, value=value, class=inputMode).form-group__input
+
+mixin inputWithIcon(labelText, name, placeholder, value, labelMode, inputMode, icon, iconMode)
+    .form-group&attributes(attributes)
+        label.form-group__label(class=labelMode for=name) #{labelText}
+        input(name=name, id=name, type=type, placeholder=placeholder, value=value, class=inputMode).form-group__input
+        span(class="icon form-group__icon " + iconMode) !{icon}

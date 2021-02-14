@@ -1,0 +1,100 @@
+extends template/main
+
+block variables
+    - var title = 'Сотрудники'
+    - var pageClass = 'employeesPage'
+
+block content
+    section.page-header
+        .page-header__container.container
+            ul.breadcrumbs.page-header__breadcrumbs
+                +breadcrumbs-item('Подарки')
+                +breadcrumbs-item('Мода и стиль','#')
+                +breadcrumbs-item('Название города','#')
+                +breadcrumbs-item('Главная', '/')
+            .page-header__title.title Отдел продаж
+    section.employees
+        .employees__grid
+            -
+                const employees = [
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn_border_round btn'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },
+                    {
+                        photo: './static/images/content/manager.jpg',
+                        name: 'Надежда',
+                        phone: '+962791000547',
+                        email: 'test123@gmail.com',
+                        position: 'Sales Executive',
+                        btnMode: 'btn btn_border_round'
+                    },]
+            each employee in employees
+                .card-employee
+                    img(src = employee.photo).card-employee__photo
+                    .card-employee__name= employee.name
+                    .card-employee__position= employee.position
+                    a(href = "mailto:" + employee.email).card-employee__email
+                    | e-mail:&nbsp;
+                    = employee.email
+                    a(href = "tel:" + employee.phone, class= employee.btnMode).btn.card-employee__phone= employee.phone

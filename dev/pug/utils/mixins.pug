@@ -1,0 +1,19 @@
+mixin icon(name,mod)
+	if(mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+	else
+		svg(class="svg-sprite-icon icon-" + name)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+mixin breadcrumbs-item(text,href)
+	li.breadcrumbs__item
+		if(href)
+			a.breadcrumbs__link(href=href)=text
+		else
+			span.breadcrumbs__text=text
+
+include ../modules/mixin_buttons/mixin_buttons
+include ../modules/mixin_inputs/mixin_inputs
+include ../modules/mixin_card/mixin_card
+include ../modules/mixin_menu/mixin_menu

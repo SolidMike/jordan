@@ -1,0 +1,66 @@
+@import "./registration/registration";
+@import "./account/account";
+@import "./account/shares-images";
+@import "./account/add-product";
+@import "./account/account-user-shares";
+@import "./account/publication-type";
+@import "./account/date-picker";
+@import "./single-share/single-share";
+@import "./user-shares/user-shares";
+@import "./contacts/contacts";
+@import "./employees/employees";
+
+.userSharesPage .page-header,
+.contactPage .page-header,
+.aboutUsPage .page-header,
+.favouritesSharesPage .page-header{
+  padding-top: calc(1rem + 2.8vw);
+  padding-bottom: calc(1rem + .6vw);
+  .title {
+    margin-top: calc(1rem + 1.4vw);
+  }
+}
+
+.accountAddShares {
+  .page-header {
+    padding-top: calc(1.4rem + 1.8vw);
+  }
+  .col > .form-group {
+    margin-top: calc(1.4rem + 1.8vw);
+    &:first-child {
+      margin-top: 0;
+      @media (max-width: 991px) {
+        margin-top: calc(1.4rem + 1.8vw);
+      }
+    }
+  }
+}
+
+.accountPage,
+.accountEditPage {
+  .page-header {
+    padding-bottom: 0;
+    padding-top: calc(1.4rem + 1.8vw);
+  }
+}
+
+.accountResetPassPage {
+  .page-header {
+    padding-top: calc(1.4rem + 1.8vw);
+  }
+  .col > .form-group {
+    margin-top: 2.6rem;
+    @media all and (max-width: 576px) {
+      margin-top: 1.2rem;
+    }
+  }
+  .account__btns-wrapper {
+    margin-top: calc(1.4rem + 1.4vw);
+    .btn {
+      padding: 1.1rem 3.125rem;
+      &:last-child {
+        min-width: 243px;
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.form-block {
+  max-width: 28.125rem;
+  text-align: center;
+  padding: 2.188rem;
+  border: 1px solid #D4D4D4;
+  border-radius: 0.938rem;
+  background-color: $white;
+  overflow: hidden;
+  &__policy {
+    font-size: 0.688rem;
+    color: #959595;
+    margin-top: 1.438rem;
+  }
+  &__btns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -1rem;
+    justify-content: center;
+    .btn {
+      margin: .5rem 0 0 1rem;
+    }
+  }
+  &__btn_type_fb {
+    font-size: 0.938rem;
+    font-weight: 500;
+    padding: .2rem 2rem .2rem .2rem;
+    background: $white;
+    color: $pink;
+    border: 1px solid $pink;
+    .btn__icon {
+      height: 2rem;
+      width: 2rem;
+    }
+    &:hover {
+      background: $pink;
+      color: $white;
+      .btn__icon {
+        background: $white;
+      }
+    }
+  }
+  &__trouble {
+    font-weight: 700;
+    font-size: 0.938rem;
+    margin-top: 0.938rem;
+    color: $pink;
+    text-decoration: none;
+    line-height: 1.1;
+    max-width: max-content;
+    display: inline-block;
+  }
+  & > .btn {
+    margin-top: 1.75rem;
+  }
+  &__form {
+    margin-top: 2.5rem;
+    & > .form-group {
+      margin-top: 1.438rem;
+      align-items: center;
+    }
+    & > .btn[type="submit"] {
+      margin: calc(1.2rem + 1.6vw) auto 0 auto;
+      display: block;
+      min-width: 12.063rem;
+      padding: .5rem 3.125rem;
+      @media (max-width: 450px) {
+        padding: .5rem 1.5rem;
+      }
+    }
+  }
+  &__title {
+    color: #5E5D5D;
+    font-size: calc(1.25rem + 0.625vw);
+    margin: 0.688rem auto;
+    font-weight: 700;
+  }
+  &__message {
+    font-weight: 300;
+    &_type_success {
+      color: green;
+    }
+    &_type_error {
+      color: red;
+    }
+  }
+  &_type_success {
+    padding: 2.188rem;
+    max-width: 39.625rem;
+    .btn {
+      margin-top: calc(1.2rem + 1.6vw);
+    }
+  }
+}

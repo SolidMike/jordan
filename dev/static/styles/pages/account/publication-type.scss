@@ -1,0 +1,42 @@
+.publication-type {
+  &__select {
+    margin-top: 1rem;
+  }
+  &__notification {
+    margin-top: 1rem;
+    color: #7C7C7C;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    @media (min-width: 768px) {
+      max-width: 415px;
+      margin-left: auto;
+    }
+  }
+  &__form-group {
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+  }
+  &__links-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: calc(1rem + 1vw) 0 0 -3rem;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+    & > * {
+      margin-left: 3rem;
+      margin-top: .5rem;
+    }
+  }
+  &__link {
+    &.link_underline_pink {
+      font-weight: 700;
+    }
+    &.link_underline_black {
+      font-weight: 500;
+    }
+  }
+}
